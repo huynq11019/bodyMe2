@@ -6,15 +6,10 @@ import java.util.UUID;
 public class BodyMe {
 
     static void menu() {
-        System.out.println("=====================================");
-        System.out.println("1. Manager teacher");
-        System.out.println("2. Manager student");
-        System.out.println("3. Manager course");
-        System.out.println("4. Manager exam");
-        System.out.println("5. Manager grade");
-        System.out.println("6. Manager student grade");
-        System.out.println("7. Manager teacher grade");
-        System.out.println("8. Manager exam grade");
+        System.out.println("===============  Selection Role Function ======================");
+        System.out.println("1. Principal");
+        System.out.println("2. Teacher");
+        System.out.println("3. Student");
         System.out.println("9. Exit");
         System.out.println("===============================");
     }
@@ -32,13 +27,13 @@ public class BodyMe {
             choice = scanner.nextInt();
             switch (choice) {
                 case 1:
-                    app.managerTeacher();
+                    app.rolePrincipal();
                     break;
                 case 2:
-                    app.managerStudent();
+                    app.managerTeacher();
                     break;
                 case 3:
-//                    app.managerCourse();
+                    app.managerStudent();
                     break;
                 case 9:
                     System.out.println(">>>>>> Exit <<<<<<");

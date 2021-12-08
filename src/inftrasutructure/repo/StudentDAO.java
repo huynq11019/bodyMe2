@@ -10,7 +10,8 @@ import java.util.stream.Collectors;
 public class StudentDAO extends IDataSource<Student> {
     @Override
     public List<Student> saveAll(List<Student> data) {
-        return null;
+        this.wireData(Student.class.getName(), data);
+        return data;
     }
 
     @Override

@@ -26,7 +26,8 @@ public class TeacherDAO extends IDataSource<Teacher> {
             return teachers;
         }
         // filter
-        return teachers.stream().filter(teacher -> teacher.getName().contains(filter))
-                .collect(Collectors.toList());
+//        return teachers.stream().filter(teacher -> teacher.getName().contains(filter))
+//                .collect(Collectors.toList());
+        return null;
     }
 }

@@ -1,21 +1,30 @@
 package inftrasutructure.domain;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 public class Subject implements Serializable {
-    private int subjectId;
+
+    private static final long serialVersionUID = -3389363800876569458L;
+
+    private UUID subjectId;
     private String subjectName;
 
-    public Subject(int subjectId, String subjectName) {
-        this.subjectId = subjectId;
+    public Subject( String subjectName) {
+
+        this.subjectId = UUID.randomUUID();
         this.subjectName = subjectName;
     }
 
-    public int getSubjectId() {
+    public void updateName(String subjectName) {
+        this.subjectName = subjectName;
+    }
+
+    public UUID getSubjectId() {
         return subjectId;
     }
 
-    public void setSubjectId(int subjectId) {
+    public void setSubjectId(UUID subjectId) {
         this.subjectId = subjectId;
     }
 

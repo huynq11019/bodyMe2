@@ -6,22 +6,30 @@ import inftrasutructure.repo.TeacherDAO;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class TeacherService {
     private final TeacherDAO teacherDAO = new TeacherDAO();
+    Scanner scanner = new Scanner(System.in);
 
     public TeacherService() {
     }
 
-    public String addTeacher(String name, String address){
-        Teacher teacher = new Teacher(name, address);
-        this.teacherDAO.save(teacher.getTeacherId(),teacher);
-        System.out.println("Add Teacher Success");
-        System.out.println(this.teacherDAO.findById(teacher.getTeacherId()));
+    public String addTeacher() {
+        System.out.println("Add Teacher");
+        System.out.println("Enter name: ");
+        String name = scanner.next();
+        System.out.println("Enter Address : ");
+        String address = scanner.nextLine();
+
+//        Teacher teacher = new Teacher(name, address);
+//        this.teacherDAO.save(teacher.getTeacherId(), teacher);
+//        System.out.println("Add Teacher Success");
+//        System.out.println(this.teacherDAO.findById(teacher.getTeacherId()));
         return "oke";
     }
 
-    public int deleteTeacher(String teacherId){
+    public int deleteTeacher(String teacherId) {
         // check object is exist
         Teacher teacher = this.teacherDAO.findById(teacherId);
         if (Objects.isNull(teacher)){
@@ -38,8 +46,8 @@ public class TeacherService {
             System.err.println("Teacher not found");
             return 0;
         }
-        teacher.updateTeacher(name, address);
-        this.teacherDAO.save(teacher.getTeacherId(), teacher);
+//        teacher.updateTeacher(name, address);
+//        this.teacherDAO.save(teacher.getTeacherId(), teacher);
         return 1;
     }
 
@@ -69,5 +77,6 @@ public class TeacherService {
         System.out.println("5. search Teacher");
         System.out.println("6. Exit");
     }
+
 
 }

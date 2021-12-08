@@ -6,38 +6,88 @@ import java.util.UUID;
 
 public class Teacher implements Serializable {
     private static final long serialVersionUID = 1L;
-    private String name;
-    private String teacherId;
+    private UUID id;
+
+    private String userName;
+    private String passsword;
+
+    private String fullName ;
+    private Integer age;
     private String address;
+    private String phoneNo;
+    private String email;
 
-    public Teacher(String name, String address) {
-        this.teacherId = UUID.randomUUID().toString();
-
-        this.name = name;
+    public Teacher(String userName, String passsword, String fullName, Integer age, String address, String phoneNo, String email) {
+        this.id = UUID.randomUUID();
+        this.userName = userName;
+        this.passsword = passsword;
+        this.fullName = fullName;
+        this.age = age;
         this.address = address;
+        this.phoneNo = phoneNo;
+        this.email = email;
     }
 
-    public void updateTeacher(String name, String address) {
-        this.name = name;
+    public void update(String fullName, Integer age, String address, String phoneNo, String email) {
+        this.fullName = fullName;
+        this.age = age;
         this.address = address;
+        this.phoneNo = phoneNo;
+        this.email = email;
     }
 
-    private List<HomeRoom> homeRoom;
-
-    public String getName() {
-        return name;
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", passsword='" + passsword + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", age=" + age +
+                ", address='" + address + '\'' +
+                ", phoneNo='" + phoneNo + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public UUID getId() {
+        return id;
     }
 
-    public String getTeacherId() {
-        return teacherId;
+    public void setId(UUID id) {
+        this.id = id;
     }
 
-    public void setTeacherId(String teacherId) {
-        this.teacherId = teacherId;
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPasssword() {
+        return passsword;
+    }
+
+    public void setPasssword(String passsword) {
+        this.passsword = passsword;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public String getAddress() {
@@ -48,13 +98,19 @@ public class Teacher implements Serializable {
         this.address = address;
     }
 
-    @Override
-    public String toString() {
-        return "Teacher{" +
-                "name='" + name + '\'' +
-                ", teacherId='" + teacherId + '\'' +
-                ", address='" + address + '\'' +
-                ", homeRoom=" + homeRoom +
-                '}';
+    public String getPhoneNo() {
+        return phoneNo;
+    }
+
+    public void setPhoneNo(String phoneNo) {
+        this.phoneNo = phoneNo;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
